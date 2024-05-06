@@ -1,2 +1,24 @@
-.vscode
+# Ignore compiled files
+/target/
+Cargo.lock
+
+# Ignore macOS system files
 .DS_Store
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore IntelliJ IDEA settings
+.idea/
+
+# Ignore Rust build artifacts
+*.rs.bk
+*.rlib
+*.rmeta
+*.so
+*.dll
+*.dylib
+*.exe
+*.pdb
+*.a
+*.lib
