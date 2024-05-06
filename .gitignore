@@ -1,5 +1,5 @@
 # Ignore compiled files
-/target/
+target/
 Cargo.lock
 
 # Ignore macOS system files
