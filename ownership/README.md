@@ -85,3 +85,32 @@ Because in the heap memory, the string "hello" is stored in a different memory l
 `Sounds infficient right? And yes it is.`
 
 So use `clone` only when you really need it.
+
+What if we want to get back the ownership of the string?
+
+```rust
+fn main() {
+    let mut my_string = String::from("Hello, world!");
+    my_string = takes_ownership(my_string);
+    // println!("{}", my_string); // This will not work because my_string has been moved to takes_ownership
+    println!("{}", my_string)
+}
+
+fn takes_ownership(some_string: String) -> String {
+    println!("{}", some_string);
+    return some_string;
+}
+```
+
+Output
+
+```bash
+adistrim@Mac ownership % cargo run
+   Compiling ownership v0.1.0 (/Users/adistrim/rusting/ownership)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.98s
+     Running `target/debug/ownership`
+Hello, world!
+Hello, world!
+```
+
+So we have to return the ownership of the string from the function.
